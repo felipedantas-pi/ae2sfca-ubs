@@ -1,0 +1,34 @@
+@"
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+
+# === Jupyter ===
+.ipynb_checkpoints/
+
+# === IDEs e SO ===
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# === Caches de ferramentas ===
+.claude/
+.ledger_history/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# === DADOS (tudo ignorado, exceto README) ===
+/dados
+
+# === Outputs intermediários ===
+outputs/figuras/_drafts/
+outputs/_intermediarios/
+
+# === Logs ===
+*.log
+"@ | Out-File -Encoding utf8 .gitignore
