@@ -21,6 +21,7 @@ Thumbs.db
 .ruff_cache/
 .mypy_cache/
 .pytest_cache/
+CLAUDE.md
 
 # === DADOS (tudo ignorado, exceto README) ===
 /dados
