@@ -20,8 +20,9 @@ EXT_PMT      = EXTERNOS / "pmt"
 INTERMEDIARIOS  = DADOS / "intermediarios"
 INT_MALHA       = INTERMEDIARIOS / "01_malha"
 INT_GRAFO       = INTERMEDIARIOS / "02_grafo"
-INT_IMPEDANCIAS = INTERMEDIARIOS / "03_impedancias"
-INT_ISOCRONAS   = INTERMEDIARIOS / "04_isocronas"
+INT_UBS         = INTERMEDIARIOS / "03_ubs"
+INT_IMPEDANCIAS = INTERMEDIARIOS / "04_impedancias"
+INT_ISOCRONAS   = INTERMEDIARIOS / "05_isocronas"
 
 # Produto final do pipeline
 PROCESSADOS = DADOS / "processados"
@@ -40,6 +41,6 @@ CRS_WGS84      = "EPSG:4326"    # WGS 84 — exigido pela API da Overture Maps
 
 def criar_diretorios():
     """Cria as pastas de saída do pipeline, se ainda não existirem."""
-    for d in (INT_MALHA, INT_GRAFO, INT_IMPEDANCIAS, INT_ISOCRONAS,
+    for d in (INT_MALHA, INT_GRAFO, INT_UBS , INT_IMPEDANCIAS, INT_ISOCRONAS,
               PROCESSADOS, FIGURAS, TABELAS, VECTORS):
         d.mkdir(parents=True, exist_ok=True)
