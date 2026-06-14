@@ -1,15 +1,26 @@
 """Extração de atributos aninhados (names, surface, speed) da Overture Maps."""
 import ast
 import json
+import numpy as np
 import pandas as pd
 
 
 def _coerce_aninhado(valor):
-    """Converte string serializada (caso GeoPackage) de volta em dict/list. None se ilegível."""
+    """Normaliza o valor aninhado para dict/list, vindo de qualquer formato de arquivo.
+
+    - GeoParquet entrega numpy.ndarray de dicts  → converte para list
+    - GeoPackage/GeoJSON entregam string         → parseia com ast/json
+    - Em memória já pode ser dict/list           → retorna como está
+    Retorna None se ausente ou ilegível.
+    """
     if valor is None:
         return None
+    if isinstance(valor, np.ndarray):
+        return valor.tolist() if valor.size > 0 else None
     if isinstance(valor, (dict, list)):
         return valor
+    if isinstance(valor, float) and pd.isna(valor):
+        return None
     if isinstance(valor, str):
         s = valor.strip()
         if not s or s.lower() in ('none', 'nan', 'null'):
@@ -58,8 +69,6 @@ def extrair_superficie(valor):
 
 def extrair_velocidade_maxima(valor):
     """Maior velocidade máxima (km/h) das regras da Overture. None se ausente."""
-    if pd.isna(valor) if not isinstance(valor, (list, dict)) else valor is None:
-        return None
     obj = _coerce_aninhado(valor)
 
     velocidades = []

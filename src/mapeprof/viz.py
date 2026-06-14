@@ -51,8 +51,8 @@ def seta_norte(ax, frac_x=0.94, frac_y=0.88):
 def moldura_mapa(ax, titulo, fonte):
     """Aplica título, rótulos de eixo (UTM) e nota de fonte a um mapa."""
     ax.set_title(titulo, pad=12)
-    ax.set_xlabel('Este (m) — SIRGAS 2000 / UTM 23S')
-    ax.set_ylabel('Norte (m) — SIRGAS 2000 / UTM 23S')
-    ax.tick_params(labelsize=7)
+    ax.set_xlabel('Este (m)')
+    ax.set_ylabel('Norte (m)')
+    ax.tick_params(labelsize=5)
     ax.figure.text(0.5, 0.005, f'Fonte: {fonte}', ha='center', fontsize=7,
                    style='italic', color='#555555')
