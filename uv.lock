@@ -18,6 +18,7 @@ dependencies = [
     { name = "city2graph" },
     { name = "contextily" },
     { name = "duckdb" },
+    { name = "esda" },
     { name = "geopandas" },
     { name = "jupyterlab" },
     { name = "mapclassify" },
@@ -38,6 +39,7 @@ requires-dist = [
     { name = "city2graph", specifier = "==0.3.1" },
     { name = "contextily", specifier = ">=1.7.0" },
     { name = "duckdb", specifier = ">=1.5.3" },
+    { name = "esda", specifier = ">=2.9.0" },
     { name = "geopandas", specifier = ">=1.1.3" },
     { name = "jupyterlab", specifier = ">=4.5.8" },
     { name = "mapclassify", specifier = ">=2.10.0" },
@@ -757,6 +759,24 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/56/8f/65fc623b51448f2bfba1a9ec6ab3debb4664c0876c0113a5e782600b53ac/duckdb-1.5.3-cp314-cp314-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:d0405eae18ec6e8210a471c97dbfe87a7e4d605274b7fe572a1f276e92158f13", size = 21455828, upload-time = "2026-05-20T11:55:23.847Z" },
     { url = "https://files.pythonhosted.org/packages/2b/db/d0274cbe9f5fe219f77c0bdf900ac77103569e83c102a4225ce04cbc607d/duckdb-1.5.3-cp314-cp314-win_amd64.whl", hash = "sha256:33ae08b3e818d7613d8936744b67718c2062c2f530376895bfd89efb51b81538", size = 13640011, upload-time = "2026-05-20T11:55:26.276Z" },
     { url = "https://files.pythonhosted.org/packages/07/5d/8f1899b8bef291caf953992fcd6c24df9f29387a35645e58c2504a5ca473/duckdb-1.5.3-cp314-cp314-win_arm64.whl", hash = "sha256:746433e49bbc667b4df283153415fbe37e9083e0eff6c3cd6e54de7536869cd4", size = 14411554, upload-time = "2026-05-20T11:55:29.037Z" },
+]
+
+[[package]]
+name = "esda"
+version = "2.9.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "geopandas" },
+    { name = "libpysal" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "scikit-learn" },
+    { name = "scipy" },
+    { name = "shapely" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/08/ac/34c427768bdb7970027c1f09e831ade3385dc96d975418b71e20aea6fb58/esda-2.9.0.tar.gz", hash = "sha256:90ec966c54e5ceb826fe0cedd7b335232862252b89cc9d1dbaa3e07a5fc9845a", size = 27476025, upload-time = "2026-03-20T22:51:21.732Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ff/f6/972903d150e18c5077d2914bf6fc82541a4b2939664f2d2a5d41167ee356/esda-2.9.0-py3-none-any.whl", hash = "sha256:b4f6d86c75f81e8ef4c451636b9c125cd8c489f307b3138773adbf83fddbae08", size = 163466, upload-time = "2026-03-20T22:51:19.139Z" },
 ]
 
 [[package]]
