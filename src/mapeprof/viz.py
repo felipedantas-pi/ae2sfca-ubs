@@ -19,10 +19,12 @@ def aplicar_estilo():
     plt.rcParams.update({
         'figure.dpi': 150, 'savefig.dpi': 300,
         'font.family': 'serif', 'font.size': 10,
-        'axes.titlesize': 11, 'axes.labelsize': 10,
-        'xtick.labelsize': 9, 'ytick.labelsize': 9, 'legend.fontsize': 9,
+        'axes.titlesize': 10, 'axes.labelsize': 10,
+        'xtick.labelsize': 8, 'ytick.labelsize': 8,
         'figure.facecolor': 'white', 'axes.facecolor': '#F8F8F8',
         'axes.grid': True, 'grid.alpha': 0.4, 'grid.linestyle': '--',
+        'legend.fontsize': 6, 'legend.title_fontsize': 8, 'legend.labelspacing': 1.2,
+        'legend.handletextpad': 0.8, 'legend.borderpad': 0.8
     })
 
 
@@ -50,9 +52,48 @@ def seta_norte(ax, frac_x=0.94, frac_y=0.88):
 
 def moldura_mapa(ax, titulo, fonte):
     """Aplica título, rótulos de eixo (UTM) e nota de fonte a um mapa."""
-    ax.set_title(titulo, pad=12)
+    ax.set_title(titulo, pad=10)
     ax.set_xlabel('Este (m)')
     ax.set_ylabel('Norte (m)')
     ax.tick_params(labelsize=5)
     ax.figure.text(0.5, 0.005, f'Fonte: {fonte}', ha='center', fontsize=7,
                    style='italic', color='#555555')
+
+def formatar_eixos_mapa(ax, fontsize=8):
+    """
+    Formata os eixos do mapa cartográfico: remove notação científica, 
+    rotaciona a latitude para vertical e ajusta os tamanhos das fontes.
+    """
+    # 1. Remove notação científica (o '1e6') forçando formato texto
+    ax.ticklabel_format(style='plain', useOffset=False)
+
+    # 2. Rotaciona a latitude (Eixo Y) para vertical e ajusta alinhamento
+    for label in ax.get_yticklabels():
+        label.set_rotation(90)
+        label.set_verticalalignment('center')
+        label.set_fontsize(fontsize)
+
+    # 3. Ajusta o tamanho da fonte da longitude (Eixo X)
+    for label in ax.get_xticklabels():
+        label.set_fontsize(fontsize)
+
+    # 4. Define os rótulos de coordenadas métricas
+    ax.set_xlabel("Este (m)", fontsize=fontsize)
+    ax.set_ylabel("Norte (m)", fontsize=fontsize)
+
+
+def ajustar_zoom_camada(ax, gdf_alvo, margem=0.02):
+    """
+    Ajusta os limites da câmera (xlim, ylim) do Matplotlib para focar estritamente 
+    na caixa delimitadora (bounding box) da camada alvo, eliminando espaços em branco.
+    """
+    # Captura as coordenadas extremas do GeoDataFrame
+    minx, miny, maxx, maxy = gdf_alvo.total_bounds
+    
+    # Calcula um pequeno respiro (buffer) percentual para a borda não colar no quadro
+    margem_x = (maxx - minx) * margem
+    margem_y = (maxy - miny) * margem
+
+    # Aplica o recorte dinâmico
+    ax.set_xlim(minx - margem_x, maxx + margem_x)
+    ax.set_ylim(miny - margem_y, maxy + margem_y)
