@@ -1,15 +1,15 @@
 ﻿;Renda mediana (R$);Renda media (R$);Populacao (hab.)
-n;1368.0;1368.0;1368.0
-Media;2135.48;2934.63;600.1
-Mediana;1212.0;1913.0;587.0
+n;1340.0;1340.0;1340.0
+Media;2151.87;2959.52;602.73
+Mediana;1212.0;1930.94;591.0
 Minimo;400.0;802.69;14.0
-1o quartil (Q1);1212.0;1390.0;414.0
-3o quartil (Q3);2000.0;3099.94;784.0
+1o quartil (Q1);1212.0;1401.06;416.0
+3o quartil (Q3);2000.0;3123.6;786.25
 Maximo;19250.0;19864.29;1495.0
-Desvio-padrao;2141.77;2796.94;263.77
-Coef. de variacao (%);100.29;95.31;43.95
-IQR (Q3 - Q1);788.0;1709.94;370.0
-Lim. sup. outlier (Q3+1,5.IQR);3182.0;5664.84;1339.0
-No de outliers superiores;181.0;156.0;4.0
-Assimetria;3.79;2.92;0.19
-Curtose;17.95;9.93;-0.35
+Desvio-padrao;2157.08;2801.34;265.04
+Coef. de variacao (%);100.24;94.66;43.97
+IQR (Q3 - Q1);788.0;1722.54;370.25
+Lim. sup. outlier (Q3+1,5.IQR);3182.0;5707.41;1341.62
+No de outliers superiores;180.0;154.0;4.0
+Assimetria;3.77;2.91;0.17
+Curtose;17.67;9.86;-0.37
