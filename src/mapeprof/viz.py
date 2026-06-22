@@ -23,8 +23,10 @@ def aplicar_estilo():
         'xtick.labelsize': 8, 'ytick.labelsize': 8,
         'figure.facecolor': 'white', 'axes.facecolor': '#F8F8F8',
         'axes.grid': True, 'grid.alpha': 0.4, 'grid.linestyle': '--',
-        'legend.fontsize': 5, 'legend.title_fontsize': 7, 'legend.labelspacing': 1.2,
-        'legend.handletextpad': 0.8, 'legend.borderpad': 0.8
+        'legend.fontsize': 6, 'legend.title_fontsize': 7,
+        'legend.labelspacing': 0.25, 'legend.handlelength': 1.3,
+        'legend.handletextpad': 0.4, 'legend.borderpad': 0.4,
+        'legend.framealpha': 0.85,
     })
 
 

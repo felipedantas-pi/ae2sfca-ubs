@@ -109,7 +109,7 @@ Avenida Campos Sales,residential,secondary,80.9274718412646
 Avenida Zequinha Freire,residential,secondary,83.48266360292054
 Avenida Miguel Rosa,residential,primary,90.05387798280512
 Avenida Prefeito Wall Ferraz,residential,primary,90.42900953471141
-BR-343,residential,trunk,94.83676288214411
+BR-343,secondary,trunk,94.83676288214411
 Avenida Miguel Rosa,residential,primary,101.71917629163916
 Avenida Prefeito Wall Ferraz,tertiary,primary,103.02526600655492
 Avenida Prefeito Wall Ferraz,tertiary,primary,103.83688302882851
@@ -129,6 +129,6 @@ Avenida Professor Arimatéia Santos,residential,primary,123.5398994219975
 Avenida Professor Arimatéia Santos,residential,primary,125.24435650677673
 Rua Juliano Moreira,living_street,tertiary,126.21268990818643
 Avenida Francisco Nogueira,residential,secondary,131.61781552057988
-BR-343,residential,trunk,134.93738044276756
+BR-343,secondary,trunk,134.93738044276756
 Avenida Deputado Paulo Ferraz,service,trunk,137.99513799319357
 Rua Juliano Moreira,living_street,tertiary,138.39623727627668
