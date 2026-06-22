@@ -1,0 +1,11 @@
+﻿class;arestas_com_dado;mediana_kmh
+trunk;375;80.0
+unknown;4;80.0
+tertiary;1231;60.0
+secondary;1876;60.0
+primary;1994;60.0
+residential;1274;40.0
+unclassified;26;40.0
+path;3;30.0
+living_street;18;25.0
+service;119;20.0

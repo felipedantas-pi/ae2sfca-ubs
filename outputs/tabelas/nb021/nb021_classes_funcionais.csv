@@ -1,17 +1,16 @@
-﻿indicador,valor
-Segmentos brutos (Overture),"46,970"
-Segmentos rodoviários (pós-filtro semântico),"46,932"
-Arestas após correção topológica,"52,977"
-Nós do grafo,"35,187"
-Componentes conexos,45
-Nós no componente gigante (%),99.37
-Pontas soltas / cul-de-sac (%),11.4
-Extensão total da rede (km),"4,817.7"
-Densidade viária na Zona Urbana (km/km²),15.29
-Comprimento mediano da aresta (m),67.0
-Linearidade média,0.985
-Arestas com nome de via (%),73.6
-Arestas com superfície conhecida (%),29.1
-"— pavimentadas, entre as de superfície conhecida (%)",87.8
-Arestas com velocidade regulamentar (%),13.1
-Arestas sem hierarquia funcional (%),3.1
+﻿class;arestas;percentual_%;extensao_km
+cycleway;166;0.31;29.1
+footway;953;1.8;41.2
+living_street;663;1.25;39.4
+path;602;1.14;97.7
+pedestrian;43;0.08;5.1
+primary;2680;5.06;228.5
+residential;34003;64.18;3078.9
+secondary;3087;5.83;216.7
+service;4058;7.66;264.1
+steps;26;0.05;0.5
+tertiary;4299;8.11;314.8
+track;272;0.51;97.3
+trunk;485;0.92;81.2
+unclassified;1053;1.99;275.9
+unknown;587;1.11;47.2
