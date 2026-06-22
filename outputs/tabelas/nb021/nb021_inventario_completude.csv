@@ -1,0 +1,7 @@
+﻿;descricao;preenchidas;preenchidas_%
+subtype;Tipo de infraestrutura (road, rail, ...);46970;100.0
+class;Classe funcional da via (primary, residential, ...);46970;100.0
+names;Nome(s) da via — estrutura aninhada;36041;76.7
+road_surface;Tipo de superfície — estrutura aninhada;13182;28.1
+speed_limits;Velocidade regulamentar — estrutura aninhada;5593;11.9
+connectors;Junções do segmento — liga arestas aos nós;46970;100.0
