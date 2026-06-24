@@ -5,7 +5,7 @@ Roteiro computacional aberto e reprodutível que aplica o método **AE2SFCA**
 geográfica às Unidades Básicas de Saúde (UBS) da zona urbana de Teresina-PI, nos
 modos automóvel e pedestre, e diagnosticar as desigualdades socioespaciais de acesso.
 
-> Dissertação de Mestrado — MAPEPROF/IFPI — Felipe Ramos Dantas (2026)
+> Dissertação de Mestrado — [MAPEPROF](https://www.ifpi.edu.br/mapeprof)/IFPI — Felipe Ramos Dantas (2026)
 
 ## Pré-requisitos
 
@@ -88,6 +88,15 @@ ao MAUP.
   school = {Instituto Federal do Piauí — MAPEPROF}
 }
 ```
+
+## Sobre o programa
+
+Pesquisa desenvolvida no **MAPEPROF** — Mestrado Profissional em Planejamento Urbano e
+Regional / IFPI.
+
+- 🌐 Site oficial: <https://www.ifpi.edu.br/mapeprof>
+- 📷 Instagram: [@mapeprof](https://www.instagram.com/mapeprof/)
+
 
 ## Licença
 
