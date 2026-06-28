@@ -13,6 +13,30 @@ modos automóvel e pedestre, e diagnosticar as desigualdades socioespaciais de a
 - [`uv`](https://docs.astral.sh/uv/) para gerenciamento de ambiente e dependências
 - Espaço em disco para os dados externos (IBGE, Overture, CNES)
 
+## Instalando o `uv` no Windows
+
+O `uv` é o gerenciador de ambiente e dependências usado no projeto. Se você ainda não o
+tem, a instalação leva poucos minutos — e **não é preciso instalar o Python à parte**, o
+próprio `uv` cuida disso.
+
+1. Abra o **PowerShell**: tecle `Win`, digite *PowerShell* e clique para abrir.
+2. Cole o comando oficial de instalação e tecle `Enter`:
+
+   ```powershell
+   powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+   ```
+
+   > Alternativa (se você usa o gerenciador *winget*): `winget install --id=astral-sh.uv`
+
+3. **Feche e reabra** o PowerShell, para o sistema reconhecer o novo comando.
+4. Confirme que a instalação funcionou:
+
+   ```powershell
+   uv --version
+   ```
+
+   Se aparecer algo como `uv 0.x.x`, está tudo certo — siga para a **Instalação** abaixo.
+
 ## Instalação
 
 ```bash
