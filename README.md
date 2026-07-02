@@ -58,6 +58,28 @@ A pasta `dados/` é um *symlink* para armazenamento externo (Google Drive), orga
 `externos/`, `intermediarios/` e `processados/`. Arquivos grandes (> 50 MB) ficam fora do
 git e sincronizam pelo Drive.
 
+### Aquisição manual das UBS e das áreas de ESF
+
+As únicas camadas obtidas manualmente vêm do geoportal **TeresinaGeo** (Prefeitura de
+Teresina / SEMPLAM), que disponibiliza os dados apenas para visualização. O procedimento:
+
+1. No geoportal, exporte as camadas de interesse em **KML** (formato nativo da plataforma):
+   as **UBS** (pontos) e as **áreas de atuação das ESF** (polígonos).
+   > Geoportal: `<preencher com a URL do TeresinaGeo / SEMPLAM>`
+2. Converta cada **KML → GeoJSON** (no QGIS: *Exportar → Salvar feições como… GeoJSON*; ou
+   `ogr2ogr`). Mantenha o CRS geográfico **EPSG:4326** — o notebook reprojeta para UTM.
+3. Salve em `dados/externos/pmt/` com **exatamente** estes nomes (o NB 01.3 os lê por nome):
+
+| Camada | Origem (KML) | Arquivo final exigido | Geometria | CRS |
+|---|---|---|---|---|
+| Unidades Básicas de Saúde (93) | `UBS.kml` | `dados/externos/pmt/ubs.geojson` | ponto | EPSG:4326 |
+| Áreas de atuação das ESF (240) | `Área das ESF.kml` | `dados/externos/pmt/area_das_esf.geojson` | polígono | EPSG:4326 |
+
+> ⚠️ **Os nomes de arquivo acima são obrigatórios.** Se salvar como `teresina_ubs.geojson`,
+> `ubs_zonaUrbana.geojson` ou similar, o NB 01.3 não encontrará a camada e o pipeline
+> quebrará. A **capacidade** (nº de equipes) não vem daqui — é cruzada automaticamente pelo
+> código CNES no próprio notebook, a partir do CNES de cada UBS.
+
 ## Pipeline
 
 Execute os notebooks **em ordem** (Jupyter/Positron). Cada um corresponde a um apêndice
