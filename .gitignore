@@ -25,6 +25,7 @@ CLAUDE.md
 
 # === DADOS (tudo ignorado, exceto README) ===
 /dados
+/scripts
 
 # === Outputs intermediários ===
 outputs/figuras/_drafts/
