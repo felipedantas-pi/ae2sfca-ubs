@@ -1,8 +1,8 @@
 ﻿;teorica;observada_overture
-living_street;20.0;20.0
-primary;60.0;60.0
-residential;30.0;40.0
-secondary;50.0;60.0
-service;20.0;20.0
-tertiary;40.0;60.0
-trunk;70.0;80.0
+Via Compartilhada;20.0;20.0
+Primária;60.0;60.0
+Residencial;30.0;40.0
+Secundária;50.0;60.0
+Via de Serviço;20.0;20.0
+Terciária;40.0;60.0
+Arterial Principal;70.0;80.0

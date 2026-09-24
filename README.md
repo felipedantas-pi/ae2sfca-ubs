@@ -143,6 +143,12 @@ Regional / IFPI.
 - 🌐 Site oficial: <https://www.ifpi.edu.br/mapeprof>
 - 📷 Instagram: [@mapeprof](https://www.instagram.com/mapeprof/)
 
+## Apresentação
+
+Os slides da defesa são feitos em **Quarto / reveal.js** (`apresentacao.qmd`), com realce do
+código Python e as figuras dos resultados. O fonte fica na pasta de apresentação da
+dissertação; para publicar no GitHub Pages, copie-a para o repositório e rode
+`quarto publish gh-pages`. Instruções completas no README da própria pasta.
 
 ## Licença
 
