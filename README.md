@@ -96,7 +96,7 @@ o interpretador `.venv`).
 
 ## Dados
 
-Os dados **não são versionados no GitHub**. Eles ficam no **Zenodo** ([10.5281/zenodo.22964753](10.5281/zenodo.22964753)),
+Os dados **não são versionados no GitHub**. Eles ficam no **Zenodo** ([10.5281/zenodo.22964753](https://doi.org/10.5281/zenodo.22964753)),
 em um único pacote com a pasta `dados/` pronta (~100 MB descompactado). A pasta segue esta
 estrutura, que os notebooks esperam (caminhos definidos em `src/mapeprof/config.py`):
 
@@ -108,17 +108,21 @@ dados/
 │   ├── ibge/          #   município, zona urbana e área de estudo (zona urbana + buffer de 5 km)
 │   └── overture/      #   segmentos e conectores viários (Overture Maps)
 ├── intermediarios/    # saídas de cada notebook (regeneráveis)
-│   ├── 01_malha/  02_grafo/  03_ubs/  04_impedancias/  05_isocronas/
+│   ├── 01_malha/  
+    ├──02_grafo/
+    ├──03_ubs/
+    ├──04_impedancias/
+    └──05_isocronas/
 └── processados/       # produto final: índice de acessibilidade por setor
 ```
 
 ### Escolha uma rota
 
-| Rota | Objetivo | Notebooks | Internet | Tempo aproximado |
-|---|---|---|---|---|
-| **A: rápida** | Conferir o índice e os testes das hipóteses | apenas `05.1` e `06.1` | não | [PREENCHER: min] |
-| **B: completa, offline** | Reproduzir todo o processamento a partir das entradas | `01.3` → `06.1` (`01.4` e `01.5` opcionais) | não | [PREENCHER: total medido] |
-| **C: do zero** | Repetir também a aquisição dos dados públicos | `01.1` → `06.1` | **sim** | [PREENCHER: total medido] |
+| Rota | Objetivo | Notebooks | Internet |
+|---|---|---|---|
+| **A: rápida** | Conferir o índice e os testes das hipóteses | apenas `05.1` e `06.1` | não | 
+| **B: completa, offline** | Reproduzir todo o processamento a partir das entradas | `01.3` → `06.1` (`01.4` e `01.5` opcionais) | não | 
+| **C: do zero** | Repetir também a aquisição dos dados públicos | `01.1` → `06.1` | **sim** | 
 
 ### Rotas A e B: baixar e extrair o dataset
 
@@ -131,9 +135,6 @@ contém a pasta `dados/`).
 Invoke-WebRequest -Uri "https://zenodo.org/records/10.5281/zenodo.22964753/files/ae2sfca-ubs_dados_v1.0.zip?download=1" -OutFile ae2sfca-ubs_dados_v1.0.zip
 Expand-Archive -Path .\ae2sfca-ubs_dados_v1.0.zip -DestinationPath .
 ```
-
-A integridade pode ser conferida com o `MANIFEST.csv` do registro (SHA-256 de cada arquivo):
-`Get-FileHash -Algorithm SHA256 <arquivo>` (PowerShell) ou `sha256sum <arquivo>` (Linux/macOS).
 
 Em seguida, execute os notebooks na ordem indicada na tabela acima. Na Rota B, o `01.3` reconhece
 o ZIP do CNES já presente em `dados/externos/cnes/` e **não baixa** os ~700 MB do DataSUS.
@@ -164,7 +165,7 @@ As únicas camadas sem download automático vêm do geoportal **TeresinaGeo** (P
 Teresina / SEMPLAN), que disponibiliza os dados apenas para visualização. Procedimento:
 
 1. No geoportal, exporte as camadas em **KML** (formato nativo da plataforma).
-   - Geoportal: https://www.google.com/maps/d/u/0/viewer?mid=1hz-s5m9BZJNf3hqztH5SKVT6DlNaoAte&ll=-5.08978475802348%2C-42.765517773528074&z=13
+   - Geoportal: [https://www.google.com/maps/d/u/0/viewer?mid=1hz-s5m9BZJNf3hqztH5SKVT6DlNaoAte&ll=-5.08978475802348%2C-42.765517773528074&z=13](https://www.google.com/maps/d/u/0/viewer?mid=1hz-s5m9BZJNf3hqztH5SKVT6DlNaoAte&ll=-5.08978475802348%2C-42.765517773528074&z=13)
    - Data da exportação usada na dissertação: [06/04/2026]
 2. Converta cada **KML → GeoJSON** (no QGIS: *Exportar → Salvar feições como… GeoJSON*; ou
    `ogr2ogr`), mantendo o CRS geográfico **EPSG:4326** (os notebooks reprojetam para UTM).
@@ -191,16 +192,16 @@ apêndices) e não alteram a cadeia de cálculo.
 | Notebook | Etapa | Lê (principais) | Grava (principais) | Tempo | Apêndice |
 |---|---|---|---|---|---|
 | `01.1` | Limites IBGE, setores censitários e demanda (Censo 2022) | download IBGE | `externos/ibge/*`, `01_malha/…DadosCompletos` | ~10–15 min | A |
-| `01.2` | Malha viária (Overture Maps) | área de estudo (`ibge/`) e API Overture | `externos/overture/*` | [PREENCHER] | B |
-| `01.3` | UBS e capacidade instalada (CNES) | `pmt/*`, ZIP do CNES (baixa se ausente) | `03_ubs/…ubs_capacidade` | [PREENCHER] | C |
-| `01.4` | Visualização cartográfica da área de estudo | `ibge/`, `overture/`, UBS | figuras e tabela `nb014` | [PREENCHER] | — |
-| `01.5` | Análise exploratória socioeconômica | `DadosCompletos`, UBS | figuras e tabelas `nb015` | [PREENCHER] | — |
-| `02.1` | Limpeza e correção topológica da malha | `overture/*.geojson` | `02_grafo/…road_cleaned` | [PREENCHER] | D |
-| `02.2` | Imputação de classes funcionais (Rede Neural em Grafos) | `road_cleaned` | `02_grafo/…road_imputed` | [PREENCHER] | E |
-| `03.1` | Velocidades e impedâncias (tempo de viagem) | `road_imputed` | `04_impedancias/…road_routed` | [PREENCHER] | F |
+| `01.2` | Malha viária (Overture Maps) | área de estudo (`ibge/`) e API Overture | `externos/overture/*` | - | B |
+| `01.3` | UBS e capacidade instalada (CNES) | `pmt/*`, ZIP do CNES (baixa se ausente) | `03_ubs/…ubs_capacidade` | - | C |
+| `01.4` | Visualização cartográfica da área de estudo | `ibge/`, `overture/`, UBS | figuras e tabela `nb014` | - | — |
+| `01.5` | Análise exploratória socioeconômica | `DadosCompletos`, UBS | figuras e tabelas `nb015` | - | — |
+| `02.1` | Limpeza e correção topológica da malha | `overture/*.geojson` | `02_grafo/…road_cleaned` | - | D |
+| `02.2` | Imputação de classes funcionais (Rede Neural em Grafos) | `road_cleaned` | `02_grafo/…road_imputed` | - | E |
+| `03.1` | Velocidades e impedâncias (tempo de viagem) | `road_imputed` | `04_impedancias/…road_routed` | - | F |
 | `04.1` | Isócronas de 10/20/30 min (carro e pedestre) | `road_routed`, UBS | `05_isocronas/*` | ~20–25 min | G |
-| `05.1` | Índice AE2SFCA (e E2SFCA por centroide) | isócronas, UBS, `DadosCompletos` | `processados/…setores_acessibilidade` | [PREENCHER] | H |
-| `06.1` | Testes das hipóteses (H1 socioterritorial e H2 metodológica) | `setores_acessibilidade`, `DadosCompletos` | figuras e tabelas `nb061` | [PREENCHER] | I |
+| `05.1` | Índice AE2SFCA (e E2SFCA por centroide) | isócronas, UBS, `DadosCompletos` | `processados/…setores_acessibilidade` | - | H |
+| `06.1` | Testes das hipóteses (H1 socioterritorial e H2 metodológica) | `setores_acessibilidade`, `DadosCompletos` | figuras e tabelas `nb061` | - | I |
 
 
 Figuras e tabelas de cada notebook são gravadas em `outputs/figuras/nbXYZ/` e
@@ -308,7 +309,7 @@ Dissertação:
   author = {Dantas, Felipe Ramos},
   year   = {2026},
   school = {Instituto Federal do Piauí — MAPEPROF},
-  url    = {[PREENCHER: link do repositório institucional]}
+  url    = {link do repositório institucional]}
 }
 ```
 
@@ -333,7 +334,7 @@ Código:
   author    = {Dantas, Felipe Ramos},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {[PREENCHER: DOI do código]},
+  doi       = {DOI do código]},
   url       = {https://github.com/felipedantas-pi/ae2sfca-ubs}
 }
 ```
