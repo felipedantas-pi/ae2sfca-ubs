@@ -334,7 +334,7 @@ Código:
   author    = {Dantas, Felipe Ramos},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {DOI do código]},
+  doi       = {https://doi.org/10.5281/zenodo.22967980},
   url       = {https://github.com/felipedantas-pi/ae2sfca-ubs}
 }
 ```
