@@ -10,8 +10,8 @@ modos automóvel e pedestre, e diagnosticar as desigualdades socioespaciais de a
 | | |
 |---|---|
 | **Código** | <https://github.com/felipedantas-pi/ae2sfca-ubs> |
-| **DOI do código** | [PREENCHER: DOI gerado pelo Zenodo a partir do *release* do GitHub] |
-| **Dados** | [10.5281/zenodo.22964753](10.5281/zenodo.22964753) — descrição completa em [`docs/README_DATASET.md`](docs/README_DATASET.md) |
+| **DOI do código** | DOI: [doi.org/10.5281/zenodo.22967980](https://doi.org/10.5281/zenodo.22967980) |
+| **Dados** | DOI: [10.5281/zenodo.22964753](10.5281/zenodo.22964753) — descrição completa em [`docs/README_DATASET.md`](docs/README_DATASET.md) |
 | **Dissertação** | [PREENCHER: link do repositório institucional do IFPI] |
 | **Licenças** | Código: MIT · Texto, figuras e tabelas: CC BY 4.0 · Dados de terceiros: licença de cada origem |
 
