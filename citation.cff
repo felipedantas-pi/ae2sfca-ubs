@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Se você usar este software ou seus dados, cite-o como abaixo."
+title: "ae2sfca-ubs: rotina computacional aberta e reprodutível para a acessibilidade geográfica às UBS de Teresina-PI"
+type: software
+authors:
+  - family-names: Dantas
+    given-names: Felipe Ramos
+    email: tecnologo.felipedantas@gmail.com
+    affiliation: "Instituto Federal do Piauí (IFPI), Programa de Pós-Graduação Profissional em Análise e Planejamento Espacial (MAPEPROF)"
+    orcid: "https://orcid.org/0000-0002-8839-8759"
+version: "1.0.0"
+date-released: "2026-09-25"
+license: MIT
+repository-code: "https://github.com/felipedantas-pi/ae2sfca-ubs"
+abstract: >-
+  Roteiro computacional em Python (notebooks e pacote mapeprof) que aplica o
+  método AE2SFCA à acessibilidade geográfica às UBS da zona urbana de
+  Teresina-PI, nos modos automóvel e pedestre, e testa as hipóteses de
+  iniquidade socioterritorial (H1) e de correção metodológica (H2).
+keywords:
+  - acessibilidade geográfica
+  - Atenção Primária à Saúde
+  - AE2SFCA
+  - análise espacial
+  - Teresina
+references:
+  - type: dataset
+    title: "Dataset: Acessibilidade geográfica às UBS de Teresina-PI (AE2SFCA)"
+    authors:
+      - family-names: Dantas
+        given-names: Felipe Ramos
+    doi: "https://doi.org/10.5281/zenodo.22964753"
